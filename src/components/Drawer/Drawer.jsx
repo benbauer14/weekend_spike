@@ -78,7 +78,7 @@ const Drawer = () => {
             <Divider />
             <List>
             {['Logout'].map((text, index) => (
-                <ListItem button key={text} onClick={() => logOut()}>
+                <ListItem button key={text} onClick={() => logOutClick()}>
                     <ListItemIcon><ExitToAppIcon /></ListItemIcon>
                     <ListItemText primary={text} />
                 </ListItem>
