@@ -19,6 +19,8 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import Drawer from '../Drawer/Drawer'
+import Chat from '../Chat/Chat'
 
 import './App.css';
 
@@ -32,6 +34,7 @@ function App() {
   return (
     <Router>
       <div>
+        <Drawer />
         <Nav />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
@@ -50,6 +53,9 @@ function App() {
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
             Even though it seems like they are different pages, the user is always on localhost:3000/user */}
+          <ProtectedRoute exact path ='/chat'>
+            <Chat/>
+          </ProtectedRoute>
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
