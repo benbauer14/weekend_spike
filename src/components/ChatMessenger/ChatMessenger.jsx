@@ -15,7 +15,7 @@ function ChatMessenger () {
       }, []);
 
     const getMessages = () =>{
-        dispatch({type:'FETCH_MESSAGES', payload: userSaga.username})
+        dispatch({type:'FETCH_MESSAGES', payload: user.username})
     }
 
     return (
