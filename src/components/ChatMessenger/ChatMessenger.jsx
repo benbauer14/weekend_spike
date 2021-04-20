@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ChatMessengerItem from '../../ChatMessengerItem/ChatMessengerItem';
-import userSaga from '../../redux/sagas/user.saga';
+
 import './ChatMessenger.css'
 
 function ChatMessenger () {
@@ -21,7 +21,7 @@ function ChatMessenger () {
     return (
         <>
         <div className="chatMain">
-            <ChatMessengerItem messages={messages} />
+            <ChatMessengerItem />
         </div>
         </>
     )

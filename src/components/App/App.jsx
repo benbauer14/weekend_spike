@@ -27,8 +27,13 @@ import './App.css';
 function App() {
   const dispatch = useDispatch();
 
+  const initalizeStore = () =>{
+    dispatch({ type: 'FETCH_USER' })
+    dispatch({ type: 'FETCH_MESSAGES' })
+  }
+
   useEffect(() => {
-    dispatch({ type: 'FETCH_USER' });
+    initalizeStore()
   }, [dispatch]);
 
   return (
