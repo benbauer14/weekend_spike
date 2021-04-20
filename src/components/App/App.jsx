@@ -20,7 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Drawer from '../Drawer/Drawer'
-import Chat from '../Chat/Chat'
+import Chat from '../ChatMessenger/ChatMessenger'
 
 import './App.css';
 

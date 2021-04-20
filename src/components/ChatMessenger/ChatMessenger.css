@@ -6,9 +6,7 @@
     border: solid 1px black;
 }
 
-.chatMessageListItem:hover{
-    background-color: grey;
-}
+
 
 .chatMessage p{
     font-size: 10px;
