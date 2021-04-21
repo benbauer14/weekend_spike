@@ -29,7 +29,8 @@ function App() {
 
   const initalizeStore = () =>{
     dispatch({ type: 'FETCH_USER' })
-    dispatch({ type: 'FETCH_MESSAGES' })
+    dispatch({type: 'FETCH_MESSAGES'})
+    dispatch({type: 'FETCH_UNREAD'})
   }
 
   useEffect(() => {

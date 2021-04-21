@@ -8,7 +8,6 @@ const router = express.Router();
 router.get('/', (req, res) => {
   // GET chat messages
     const user = req.query.user
-    console.log(user)
     const queryText = `SELECT * FROM chat WHERE "toUser"=$1 OR "fromUser"=$1`
     pool.query(queryText, [user]).then((response) => {
         res.send(response)
@@ -17,6 +16,8 @@ router.get('/', (req, res) => {
         console.log(err)
     })
 });
+
+
 
 /**
  * POST route template

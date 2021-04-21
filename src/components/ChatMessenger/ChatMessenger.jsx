@@ -7,7 +7,6 @@ import './ChatMessenger.css'
 
 function ChatMessenger () {
     const dispatch = useDispatch()
-    const messages = useSelector((store) => store.chat);
     const user = useSelector((store) => store.user);
 
     useEffect(() => {
@@ -16,7 +15,9 @@ function ChatMessenger () {
 
     const getMessages = () =>{
         dispatch({type:'FETCH_MESSAGES', payload: user.username})
+        dispatch({type:'FETCH_UNREAD', payload: user.username})
     }
+    
 
     return (
         <>

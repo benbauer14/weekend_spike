@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChatIcon from '@material-ui/icons/Chat';
 import {Link, Badge} from '@material-ui/core'
 import { useHistory } from 'react-router';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     dispatch({type: 'SET_DRAWER'})
   }
 
+  const unread = useSelector((store) => store.unread);
 
   return (
     <div className={classes.root}>
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
           </Typography>
 
           <IconButton edge="start" className={classes.chatButton} color="inherit" aria-label="chat">
-          <Badge badgeContent={4} color="error" onClick={() => history.push('/chat')}>
+          <Badge badgeContent={unread} color="error" onClick={() => history.push('/chat')}>
             <ChatIcon />
           </Badge>
           </IconButton>
