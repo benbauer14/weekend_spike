@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ChatMessengerItem from '../../ChatMessengerItem/ChatMessengerItem';
+import ChatMessengerItem from '../ChatMessengerItem/ChatMessengerItem';
 
 import './ChatMessenger.css'
 
