@@ -1,13 +1,21 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector} from 'react-redux';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router';
 import './UserPage.css'
+import RefreshReducers from '../RefreshReducers/RefreshReducers';
 
 function UserPage() {
-  // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const history = useHistory();
+  const dispatch = useDispatch()
+
+  useEffect(() => {getMessages();}, []);
+  const getMessages = () =>{
+      dispatch({type:'FETCH_MESSAGES', payload: user.username})
+      dispatch({type:'FETCH_UNREAD', payload: user.username})
+  }
+
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>

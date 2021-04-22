@@ -11,6 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const chatRouter = require('./routes/chat.router.js')
 const unreadRouter = require ('./routes/unread.router')
+const chatuserRouter =require ('./routes/chatuser.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -27,6 +28,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/chat', chatRouter);
 app.use('/api/unread', unreadRouter);
+app.use('/api/gardenerchat', chatuserRouter);
 
 // Serve static files
 app.use(express.static('build'));

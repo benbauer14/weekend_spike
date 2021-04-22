@@ -4,6 +4,7 @@ import user from './user.reducer';
 import drawer from './drawer.reducer'
 import messages from './chat.reducer'
 import unread from './unread.reducer'
+import chatuser from './chatuser.reducer'
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   drawer,
   messages,
   unread,
+  chatuser,
 });
 
 export default rootReducer;

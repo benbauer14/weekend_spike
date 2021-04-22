@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Drawer from '../Drawer/Drawer'
 import Chat from '../ChatMessenger/ChatMessenger'
+import FellowChat from '../ChatUser/ChatUser'
 
 import './App.css';
 
@@ -61,6 +62,9 @@ function App() {
             Even though it seems like they are different pages, the user is always on localhost:3000/user */}
           <ProtectedRoute exact path ='/chat'>
             <Chat/>
+          </ProtectedRoute>
+          <ProtectedRoute exact path ='/fellowchat'>
+            <FellowChat/>
           </ProtectedRoute>
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
