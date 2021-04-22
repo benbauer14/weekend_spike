@@ -6,16 +6,15 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import Search from '../Search/Search';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -27,11 +26,11 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch();
-
+  const user = useSelector((store) => store.user);
   const initalizeStore = () =>{
     dispatch({ type: 'FETCH_USER' })
-    dispatch({type: 'FETCH_MESSAGES'})
-    dispatch({type: 'FETCH_UNREAD'})
+    dispatch({type:'FETCH_MESSAGES', payload: user.username})
+    dispatch({type:'FETCH_UNREAD', payload: user.username})
   }
 
   useEffect(() => {
@@ -65,6 +64,9 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path ='/fellowchat'>
             <FellowChat/>
+          </ProtectedRoute>
+          <ProtectedRoute exact path ='/search'>
+            <Search/>
           </ProtectedRoute>
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
